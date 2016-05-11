@@ -1,0 +1,104 @@
+﻿
+h1{
+	padding: 10px;
+	color: white;
+}
+
+h2{
+	padding:10px;
+	border-color: #B8222D;
+	color: white;
+}
+
+a{
+	color:white;
+}
+
+h3{
+	border-color: #B8222D;
+}
+
+figure{
+	background-color: #D2D0DC;
+	text-align: center;
+	width: 485px;
+}
+
+strong{
+	color: #B8222D;
+}
+
+a{
+	decoration:none;
+	color: white;
+}
+
+.menu{
+	margin:auto;
+	align-items: center;
+	padding:10px;
+}
+
+.sobre-mim {
+	background-color: #737373;
+	float:left;
+	height: 310px;
+}
+
+header {
+	width: auto;
+	height: 250px;
+	background-color: #737373;
+}
+
+.projetos {
+	background-color: #737373;
+
+}
+
+.nav-menu {
+	background-color: #737373;
+}
+
+#imagem-projetos{
+	float:right;
+}
+
+.perfil-im img{
+	width:auto;
+	max-height: 310px;
+}
+
+.menu-items ul {
+	padding:0px;
+	margin:0px;
+	list-style:none;
+}
+
+.menu-items ul li {
+	padding:5px;
+	display: inline;
+}
+
+.menu-opcoes a:hover {
+color: #007dc6;
+}
+.menu-opcoes a:active {
+color: #867dc6;
+}
+
+.perfil-im {
+	/*margin-left:30px;
+	height: 310px;*/
+	background-color: #999999;
+}
+
+.projetos-items a img{
+	width:auto;
+	height: 200px;
+}
+
+.projetos-items {
+	padding:5px;
+	margin-top:-10px;
+}
