@@ -1,145 +1,300 @@
-﻿<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/port_index.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<script src="js/jquery.js"></script>
-		<script src="js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
-		<link rel="stylesheet" href="css/jquery.modal.css" type="text/css" media="screen" />
-		<title>Portifolio Eduardo Pedroso</title>
-	</head>
-	<body>
-		<?php $date = "26/10/1995";
-			if (isset($_POST["submit"])) {
-				$name = $_POST['name'];
-				$email = $_POST['email'];
-				$message = $_POST['message'];
-				$human = intval($_POST['human']);
-				$from = 'Demo Contact Form';
-				$to = 'example@bootstrapbay.com';
-				$subject = 'Message from Contact Demo';
+<!DOCTYPE html>
+<html lang="en">
 
-				$body = "From: $name\n E-Mail: $email\n Message:\n $message";
+<head>
 
-				if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-					if (mail ($to, $subject, $body, $from)) {
-						$result='<div class="alert alert-success">Obrigado pelo contato.</div>';
-					} else {
-						$result='<div class="alert alert-danger">Ocorreu um erro ao enviar a mensagem.</div>';
-					}
-				}
-			}
-		?>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<header>
-			<h1>Portifolio Eduardo Pedroso</h1>
-			<p><h2>Full Stack Web Developer</h2></p>
-			<nav class="navbar nav-menu">
-			  <div class="container-fluid">
-			    <!-- Brand and toggle get grouped for better mobile display -->
-			    <div class="navbar-header">
-			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
-			    </div>
+    <title>Portifolio - Eduardo Pedroso</title>
 
-			    <!-- Collect the nav links, forms, and other content for toggling -->
-			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			      <ul class="nav navbar-nav">
-			        <li><a href="#">Link</a></li>
-			        <li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-			      </ul>
-			    </div><!-- /.navbar-collapse -->
-			  </div><!-- /.container-fluid -->
-			</nav>
-		</header>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-		</br>
+    <link href="css/freelancer.css" rel="stylesheet">
 
-		<div class="row">
-			<div class="sobre-mim col-lg-12">
-				<h2 id="sobre-mim"> Sobre mim: </h2>
-				<ul>
-					<li><strong>Nome: </strong>Eduardo Pedroso</li>
-					<li><strong>Idade: </strong>20 anos</li>
-					<li><strong>Nascido em: </strong><?= $date ?></li>
-					<li><strong>E-mail: </strong>drdpedroso@gmail.com</li>
-					<li><strong>Celular: </strong>(19)981713271</li>
-				</ul>
-				<a class="btn btn-default" href="#success" rel="modal:open">Mostrar foto de perfil</a>
-			</div>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-			<div class="perfil-im" id="success" style="display:none">
-				<img src="img\perfil.jpg">
-			</div>
+</head>
 
-		</div>
-		<br/>
+<body id="page-top" class="index">
 
-		<div class="row projetos">
-			<h2> Projetos:</h2>
-			<div class="row projetos-items">
-			  <div class="col-xs-6 col-md-3">
-			    <a href="#" class="thumbnail">
-			      <img src="img/fruits.jpg" alt="oi">
-			    </a>
-			  </div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail">
-						<img src="img/fruits.jpg" alt="oi">
-					</a>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail">
-						<img src="img/fruits.jpg" alt="oi">
-					</a>
-				</div>
-				<div class="col-xs-6 col-md-3">
-					<a href="#" class="thumbnail">
-						<img src="img/fruits.jpg" alt="oi">
-					</a>
-				</div>
-			</div>
-		</div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#page-top">Home</a>
+            </div>
 
-		<!-- <div class="container" id="success" style="display:none">
-			Seu modal foi mostrado com sucesso!
-		</div> -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">Sobre</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-		<br/>
-<div class="container">
-	<form class="form-horizontal" role="form" method="post" action="index.php">
-		<div class="form-group">
-			<label for="name" class="col-sm-2 control-label">Nome</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" value="">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="email" class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-10">
-				<input type="email" class="form-control" id="email" name="email" placeholder="example@example.com" value="">
-			</div>
-		</div>
-		<div class="form-group">
-			<label for="message" class="col-sm-2 control-label">Mensagem</label>
-			<div class="col-sm-10">
-				<textarea class="form-control" rows="4" name="message"></textarea>
-			</div>
-		</div>
-		<div class="form-group">
-			<div class="col-sm-10 col-sm-offset-2">
-				<input id="submit" name="submit" type="submit" value="Enviar" class="btn btn-primary">
-			</div>
-		</div>
-	</form>
-	<?= $result ?>
-</div>
-	</body>
+    <!-- Header -->
+    <header >
+        <div class="container"
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive img-profile" src="img/profile.png" alt="">
+                    <div class="intro-text">
+                        <span class="name">Eduardo Pedroso</span>
+                        <hr/>
+                        <span class="skills">Full Stack Web and Mobile Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Portfolio</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                  <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/1.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/2.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sobre</h2>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Tenho cerca de 3 anos de experiencia em desenvolvimento de software, principalmente para a plataforma web e mobile.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Atualmente cursando Analise e Desenvolvimento de Sistemas no Instituto Federal de São Paulo. Trabalho como desenvolvedor de software na MATERA Systems com foco em front-end e mobile Hibrido.</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="https://github.com/drdpedroso" class="btn btn-lg btn-outline">
+                       GitHub
+                    </a>
+                    <a href="https://github.com/drdpedroso" class="btn btn-lg btn-outline">
+                       LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Contato</h2>
+                    <hr/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Digite seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Digite seu e-mail.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Telefone</label>
+                                <input type="tel" class="form-control" placeholder="Telefone" id="phone" required data-validation-required-message="Digite seu telefone.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Mensagem</label>
+                                <textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Digite sua mensagem."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-default btn-block">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- Portfolio Modals -->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Aplicações Móvies</h2>
+                            <hr>
+                            <img src="img/portfolio/1.png" class="img-responsive img-centered" alt="">
+                            <p>Desenvolvimento de aplicações para iOS e Android.</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Aplicações Web e Desktop</h2>
+                            <hr>
+                            <img src="img/portfolio/2.png" class="img-responsive img-centered" alt="">
+                            <p>Desenvolvimento de Web Apps e aplicações Desktop utilizando linguagem web.</p>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Desenvolvimento de Jogos</h2>
+                            <hr>
+                            <img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                            <p>Desenvolvimento de Jogos Digitais em 2D para mobile, desktop ou web utilizando o Unity.</p>
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+
+    <script src="js/freelancer.js"></script>
+
+</body>
+
 </html>
